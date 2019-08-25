@@ -1,10 +1,13 @@
 package com.worldwarofants.game.logic.structures;
 
 public class AbstractStructure{
+	//TODO - need to add the production stats, amount of resources produced, 0 for the non production structures.
+	//TODO - need to remove the coordinates and the related setter and getter methods.
+	//TODO - need to add references to other structures(two other structures)
 	private float hp;
 	private boolean isUpgradable; //if current structure is upgradable
 	private String resourceType; //what resource will the structure be used for
-	private int xCoor, yCoor; //(x,y) coordinates
+	private int xCoor, yCoor; //(x,y) coordinates .        //TODO - This needs to be removed
 	private int id; //unique strucutre id
 
 	public AbstractStructure(float hp, boolean isUpgradable, String resourceType, int xCoor, int yCoor, int id){
