@@ -1,7 +1,6 @@
 package com.worldwarofants.game.logic.structures;
 
 public class AbstractStructure{
-	//TODO - need to add references to other structures(two other structures)
 	protected float hp;
 	protected boolean isUpgradable; //if current structure is upgradable
 	protected String resourceType; //what resource will the structure be used for
