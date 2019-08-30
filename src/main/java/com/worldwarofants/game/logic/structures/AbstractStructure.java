@@ -1,22 +1,21 @@
 package com.worldwarofants.game.logic.structures;
 
 public class AbstractStructure{
-	//TODO - need to add the production stats, amount of resources produced, 0 for the non production structures.
-	//TODO - need to remove the coordinates and the related setter and getter methods.
 	//TODO - need to add references to other structures(two other structures)
-	private float hp;
-	private boolean isUpgradable; //if current structure is upgradable
-	private String resourceType; //what resource will the structure be used for
-	private int xCoor, yCoor; //(x,y) coordinates .        //TODO - This needs to be removed
-	private int id; //unique strucutre id
+	protected float hp;
+	protected boolean isUpgradable; //if current structure is upgradable
+	protected String resourceType; //what resource will the structure be used for
+	protected int id; //unique strucutre id
+	protected AbstractStrcuture node1;//Reference one to the next node
+	protected AbstractStructure node2;//Reference two to the bext node
 
-	public AbstractStructure(float hp, boolean isUpgradable, String resourceType, int xCoor, int yCoor, int id){
+	public AbstractStructure(float hp, boolean isUpgradable, String resourceType,int id,AbstractStructure node1,AbstractStructure node2){
 		this.hp = hp;
 		this.isUpgradable = isUpgradable;
 		this.resourceType = resourceType;
-		this.xCoor = xCoor;
-		this.yCoor = yCoor;
 		this.id = id;
+		this.node1 = node1;
+		this.node2 = node2;
 	}
 
 	//getters and setters
@@ -44,27 +43,27 @@ public class AbstractStructure{
 		this.hp = hp;
 	}
 
-	public int getxCoor(){
-		return xCoor;
-	}
-
-	public void setxCoor(int xCoor){
-		this.xCoor = xCoor;
-	}
-
-	public int getyCoor(){
-		return yCoor;
-	}
-
-	public void setyCoor(int yCoor){
-		this.yCoor = yCoor;
-	}
-
 	public int getId(){
 		return id;
 	}
 
 	public void setId(int id){
 		this.id = id;
+	}
+	
+	public void setNode1(AbstractStructure node1){
+		this.node1  = node1;
+	}
+	
+	public void setNode2(AbstractStructure node2){
+		this.node2 = node2;
+	}
+	
+	public AbstractStructure getNode1(){
+		return this.node1;
+	}
+	
+	public AbstractStructure getNode2(){
+		return this.node2;
 	}
 }
